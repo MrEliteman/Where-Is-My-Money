@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Moi Traty",
+      "hasCanvas": false,
+      "bodyTextLen": 430,
+      "bodyTextHash": "33260ee9af5d0569fae9dde1dc9b19786cc88a2b79b5cdb00c1386c24723c110",
+      "bodyTextPrefix": "1.3.0-BETA Считать деньги спокойно Личная книга трат. Всё остаёт",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Moi Traty",
+      "hasCanvas": false,
+      "bodyTextLen": 430,
+      "bodyTextHash": "33260ee9af5d0569fae9dde1dc9b19786cc88a2b79b5cdb00c1386c24723c110",
+      "bodyTextPrefix": "1.3.0-BETA Считать деньги спокойно Личная книга трат. Всё остаёт",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}
