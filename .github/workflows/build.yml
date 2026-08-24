@@ -28,7 +28,7 @@ jobs:
     - name: Install Capacitor
       run: |
         npm install @capacitor/core @capacitor/cli
-        npx cap init Where-Is-My-Money com.mreliteman.whereismymoney --web-dir=dist
+        npx cap init Where-Is-My-Money com.mreliteman.whereismymoney --web-dir=.vercel/output/static
 
     - name: Add Android Platform
       run: |
