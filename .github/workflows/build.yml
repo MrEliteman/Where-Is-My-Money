@@ -16,7 +16,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: 20
+        node-version: 22 # Обновили до 22 версии, чтобы не было ошибок библиотек TanStack
         cache: 'npm'
 
     - name: Install Dependencies
@@ -25,10 +25,24 @@ jobs:
     - name: Build Web App
       run: npm run build
 
+    # Этот шаг автоматически найдет скрытую папку с index.html и перенесет в dist
+    - name: Find and Prepare Web Assets
+      run: |
+        mkdir -p dist
+        TARGET_DIR=$(find .vercel/output -name "index.html" -exec dirname {} \; | head -n 1)
+        if [ -n "$TARGET_DIR" ]; then
+          echo "Found build assets in $TARGET_DIR, copying to dist..."
+          cp -r $TARGET_DIR/* dist/
+        else
+          echo "index.html not found in .vercel/output, checking root projects..."
+          find . -name "index.html"
+          exit 1
+        fi
+
     - name: Install Capacitor
       run: |
         npm install @capacitor/core @capacitor/cli
-        npx cap init Where-Is-My-Money com.mreliteman.whereismymoney --web-dir=.vercel/output/static
+        npx cap init Where-Is-My-Money com.mreliteman.whereismymoney --web-dir=dist
 
     - name: Add Android Platform
       run: |
